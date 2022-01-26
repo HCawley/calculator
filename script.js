@@ -2,17 +2,14 @@ const calculator = document.querySelector('#calculator')
 const keys = document.querySelector('.keys')
 const buttons = document.querySelectorAll("button")
 const output = document.getElementById("output")
-// const equals = document.querySelector("#equal")
 const numbers = document.getElementsByClassName("number")
 const clear = document.getElementById("clear")
-// const operation = document.getElementsByClassName("operator")
 
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
 let equals = "";
 
-// const attach = () => {
     buttons.forEach(button => {
         button.addEventListener('click', (event) => {
         output.innerHTML += button.innerHTML
@@ -24,8 +21,6 @@ let equals = "";
           button.innerHTML === "÷"
         ) {
           operator = button.innerHTML;
-
-          console.log("operator is =" + operator); 
         }
 
         if (
@@ -45,9 +40,6 @@ let equals = "";
           } else {
             firstNumber += button.innerHTML;
           }
-
-          console.log("first number =" + firstNumber);
-          console.log("second number =" + secondNumber); 
         }
 
         if (button.innerHTML === "=") {
@@ -60,7 +52,6 @@ let equals = "";
             } else if (operator === "÷") {
                 output.innerHTML = parseInt(firstNumber) / parseInt(secondNumber)
             }
-            console.log("the sum =" + equals)
     }
     document.querySelector("#clear").addEventListener("click", (event) => {
       location.reload()
